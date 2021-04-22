@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float move_speed = 5;
     [SerializeField] float jumpForce = 5;
-    [SerializeField] float jumpColdown = 1;
+    [SerializeField] float jumpColdown = 0.5f;
     private float jumpStart = 0;
     private bool isGrounded = true;
     private float currentPlayerPos;
