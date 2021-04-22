@@ -37958,7 +37958,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 5
   jumpForce: 8
+<<<<<<< HEAD
   jumpColdown: 1
+=======
+  jumpColdown: 0.5
+>>>>>>> fcfca3c46c26b973487faefeb1c4531f7f0c2a9a
 --- !u!50 &1390129714
 Rigidbody2D:
   serializedVersion: 4
