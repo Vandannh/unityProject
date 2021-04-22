@@ -1948,3 +1948,258 @@ System memory in use after: 88.9 MB.
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2655.
 Total: 2.333400 ms (FindLiveObjects: 0.283700 ms CreateObjectMapping: 0.118800 ms MarkObjects: 1.864000 ms  DeleteObjects: 0.065700 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001981 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.945 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1799 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 88.9 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2656.
+Total: 2.712700 ms (FindLiveObjects: 0.373600 ms CreateObjectMapping: 0.093400 ms MarkObjects: 2.192500 ms  DeleteObjects: 0.051600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 714.953253 seconds.
+  path: Assets/Scenes/Level_1.unity
+  artifactKey: Guid(4f4eee4e4f3d143cdb0448973b954b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level_1.unity using Guid(4f4eee4e4f3d143cdb0448973b954b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87082f74b40e8ecc1438bd066387c360') in 0.015129 seconds
+  Import took 0.037774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 93.089543 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_103.asset
+  artifactKey: Guid(bf7ffa76c81078e48b2e70c66a321ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_103.asset using Guid(bf7ffa76c81078e48b2e70c66a321ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc9518e17406e57d67e8abbe3b9aacb9') in 0.043673 seconds
+  Import took 0.069265 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001497 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_110.asset
+  artifactKey: Guid(145b3944a7ee41649922eb93ab0c2b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_110.asset using Guid(145b3944a7ee41649922eb93ab0c2b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc5e89a1c4fa5c3533e4414c6f57ecb') in 0.011748 seconds
+  Import took 0.034379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001380 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_123.asset
+  artifactKey: Guid(37686a95842e87946a3c6c5f981b5d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_123.asset using Guid(37686a95842e87946a3c6c5f981b5d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e4a0aaf2ac139d271b350fd1969db0e') in 0.010468 seconds
+  Import took 0.034074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001483 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_124.asset
+  artifactKey: Guid(bb989faa20771a8469515d3bb41b21bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_124.asset using Guid(bb989faa20771a8469515d3bb41b21bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b3f612abe75cdf4b7d28d0c5f312641') in 0.009796 seconds
+  Import took 0.033951 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001510 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_111.asset
+  artifactKey: Guid(082b08d5d5a96cc4d81ef84d16427987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_111.asset using Guid(082b08d5d5a96cc4d81ef84d16427987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cb55e6c7c9b525ef40ac848bc8d2780') in 0.009500 seconds
+  Import took 0.033171 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001506 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_104.asset
+  artifactKey: Guid(11e23e56ed558be46987c2fa4baaadfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_104.asset using Guid(11e23e56ed558be46987c2fa4baaadfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf55f6051ec8ec7b9da7c3ec5e92f7f1') in 0.010440 seconds
+  Import took 0.036465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001643 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_106.asset
+  artifactKey: Guid(68006e8b75895ae459905640b2fa9314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_106.asset using Guid(68006e8b75895ae459905640b2fa9314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b367bad3d675b0cd8b52649dc19a4e4') in 0.009399 seconds
+  Import took 0.034379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001684 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_104.asset
+  artifactKey: Guid(11e23e56ed558be46987c2fa4baaadfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_104.asset using Guid(11e23e56ed558be46987c2fa4baaadfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf55f6051ec8ec7b9da7c3ec5e92f7f1') in 0.009663 seconds
+  Import took 0.035071 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001551 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_106.asset
+  artifactKey: Guid(68006e8b75895ae459905640b2fa9314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_106.asset using Guid(68006e8b75895ae459905640b2fa9314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b367bad3d675b0cd8b52649dc19a4e4') in 0.010037 seconds
+  Import took 0.037746 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001608 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_119.asset
+  artifactKey: Guid(b69e20423809eb24c9d678ad087523e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_119.asset using Guid(b69e20423809eb24c9d678ad087523e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fe3f0dd2a72b6d273f9d5a5aa2cadf2') in 0.009484 seconds
+  Import took 0.035266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001451 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_126.asset
+  artifactKey: Guid(0a7a5db501c07f14a8a291da5c6c49b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_126.asset using Guid(0a7a5db501c07f14a8a291da5c6c49b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '128d60bdce2937998cec0c5e2e8ec2b7') in 0.010377 seconds
+  Import took 0.036740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001663 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_109.asset
+  artifactKey: Guid(f888791ccadda7d4f8a87da247ec057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_109.asset using Guid(f888791ccadda7d4f8a87da247ec057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec486e798acd38c5e37bff6ffcf0e402') in 0.011089 seconds
+  Import took 0.035916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001367 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_108.asset
+  artifactKey: Guid(e56370a03b628f84faf8fc75dc303652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_108.asset using Guid(e56370a03b628f84faf8fc75dc303652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4964e21a8c473ca841c9f63b78f5541') in 0.009515 seconds
+  Import took 0.035398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001538 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_117.asset
+  artifactKey: Guid(5ab9dbec7d9fbb34e9837efc01f77a3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_117.asset using Guid(5ab9dbec7d9fbb34e9837efc01f77a3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4aef7dac3fac55e0659abf14b29ed95') in 0.008969 seconds
+  Import took 0.037353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001589 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_121.asset
+  artifactKey: Guid(72baf1b88370e074589a46cb66fbf5ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_121.asset using Guid(72baf1b88370e074589a46cb66fbf5ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c81ddafa997c8b05750a274882ea8e3') in 0.009843 seconds
+  Import took 0.034972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001710 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_125.asset
+  artifactKey: Guid(d639f97f19c00604ea494a0401b35582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_125.asset using Guid(d639f97f19c00604ea494a0401b35582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be4067343b827c1d36358b7ff0e7db5a') in 0.010031 seconds
+  Import took 0.034711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001585 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_113.asset
+  artifactKey: Guid(9ec1dfca4944c2b47891979af04abd8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_113.asset using Guid(9ec1dfca4944c2b47891979af04abd8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '357cd3ce5ecaa41f736c1ea56cc9bba3') in 0.009318 seconds
+  Import took 0.034281 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001485 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_122.asset
+  artifactKey: Guid(cbbc132c49e167e4ba15afbab69b87c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_122.asset using Guid(cbbc132c49e167e4ba15afbab69b87c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b27f2a5da7a6d937c931b2693844a029') in 0.010050 seconds
+  Import took 0.036300 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001989 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_115.asset
+  artifactKey: Guid(52c77d611eaceed4e96582baff5fc610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_115.asset using Guid(52c77d611eaceed4e96582baff5fc610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d2d3752aea4388992b274e661dcb35') in 0.010267 seconds
+  Import took 0.037127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001689 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_105.asset
+  artifactKey: Guid(71f684ea83fc5e945b9e5da47f092015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_105.asset using Guid(71f684ea83fc5e945b9e5da47f092015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ce79253ab461cbf3fbc264b154557ef') in 0.009846 seconds
+  Import took 0.037028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001548 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_118.asset
+  artifactKey: Guid(0324b40100df5da47a3e5b19eb21042f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_118.asset using Guid(0324b40100df5da47a3e5b19eb21042f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b24364ccf250e87d61f435d2a56ff82c') in 0.011005 seconds
+  Import took 0.036345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001580 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_112.asset
+  artifactKey: Guid(c8470df83533b114b9cac8fc52510da9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_112.asset using Guid(c8470df83533b114b9cac8fc52510da9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00072e57e5dba1a598fd8391376e7269') in 0.010377 seconds
+  Import took 0.035722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001596 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_107.asset
+  artifactKey: Guid(c3d13085ab3937f4a8dab8b6d21b7da6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_107.asset using Guid(c3d13085ab3937f4a8dab8b6d21b7da6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6032110a3bed245681428371350ca800') in 0.010645 seconds
+  Import took 0.035627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001932 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_127.asset
+  artifactKey: Guid(f2f0af9c30431954a88f1a5c11aec3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_127.asset using Guid(f2f0af9c30431954a88f1a5c11aec3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1f18a5242afc747f0d9a41c31b1e54c') in 0.009882 seconds
+  Import took 0.035080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001677 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_114.asset
+  artifactKey: Guid(37045a328a5f6fc45a40c7ec0a72be80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_114.asset using Guid(37045a328a5f6fc45a40c7ec0a72be80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c2793fcd2eaa13ab82ab6c35a8c3a1e') in 0.010254 seconds
+  Import took 0.035669 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001802 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_116.asset
+  artifactKey: Guid(42fb91ff04abf89439b9f57276d1a959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_116.asset using Guid(42fb91ff04abf89439b9f57276d1a959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5479b2e30d583e3e37171d7a74971d81') in 0.010118 seconds
+  Import took 0.034757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001564 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_114.asset
+  artifactKey: Guid(37045a328a5f6fc45a40c7ec0a72be80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_114.asset using Guid(37045a328a5f6fc45a40c7ec0a72be80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c2793fcd2eaa13ab82ab6c35a8c3a1e') in 0.008503 seconds
+  Import took 0.032774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001554 seconds.
+  path: Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_120.asset
+  artifactKey: Guid(03ef85465ab9544488d14cc1924c46cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nature_pixel_art_assets/Nature_tiles_01/nature_environment_01_120.asset using Guid(03ef85465ab9544488d14cc1924c46cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8d139360b7b02399974176ae1806e02') in 0.010337 seconds
+  Import took 0.031760 seconds .
+
