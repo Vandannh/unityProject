@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float jumpColdown = 1;
     float jumpStart = 0;
     private bool isGrounded = true;
+    float currentPlayerPos;
+
 
 
     private Rigidbody2D player;
@@ -23,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Control left and right
         float x = Input.GetAxisRaw("Horizontal");
         float moveBy = x * move_speed;
@@ -31,14 +34,21 @@ public class PlayerScript : MonoBehaviour
         // Control when jump is pressed down
         if (Input.GetButtonDown("Jump") && isGrounded && (Time.time > jumpStart + jumpColdown) )
         {
+            currentPlayerPos = transform.position.y;
             player.gravityScale = 1;
             player.velocity = new Vector2(0, jumpForce);
             isGrounded = false;
             jumpStart = Time.time;
         }
 
+        if (transform.position.y >= currentPlayerPos + 3)
+        {
+            player.gravityScale = 3f;
+        }
+
+
         // Control when jump is released. Apply more gravity to get a faster descent.
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetButtonUp("Jump") )
         {
             player.gravityScale = 3f;
         }
