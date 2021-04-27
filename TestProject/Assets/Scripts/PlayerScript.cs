@@ -39,6 +39,7 @@ public class PlayerScript : MonoBehaviour
         if (transform.position.y >= currentPlayerPos + 3)
         {
             player.gravityScale = 3f;
+            
         }
 
 
