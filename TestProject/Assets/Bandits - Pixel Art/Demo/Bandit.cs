@@ -4,49 +4,44 @@ using System.Collections;
 public class Bandit : MonoBehaviour
 {
 
-    [SerializeField] float m_speed = 4.0f;
-    [SerializeField] float m_jumpForce = 7.5f;
+    [SerializeField] float speed = 4.0f;
     [SerializeField] Transform targetPlayer;
     [SerializeField] float attackRange = 2f;
+    [SerializeField] float engageRange = 5f;
 
     private Animator animator;
-    private Rigidbody2D enemy;
-    private Sensor_Bandit groundSensor;
-    private bool isGrounded = false;
-    private bool idCombatIdle = false;
-    private bool isDead = false;
+
+    // Use this later for checking if it is a hit on target
+    private bool isHit = false;
+    
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
-        enemy = GetComponent<Rigidbody2D>();
-        groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         MoveToTarget();
         CheckIfCombat();
-
-
-
-
     }
 
     public void MoveToTarget()
     {
 
-        if (Vector3.Distance (transform.position, targetPlayer.position) > attackRange)
+        if (Vector3.Distance (transform.position, targetPlayer.position) > attackRange && Vector3.Distance(transform.position, targetPlayer.position) < engageRange)
         {
+            // Not in range to target
+            isHit = false;
+
             if (targetPlayer.position.x >= transform.position.x + 1f)
             {
                  // Turn the enemy to target player
                 transform.localScale = new Vector2(-1.0f, 1.0f);
                 // Move player
-                transform.Translate (new Vector3 (m_speed * Time.deltaTime, 0, 0));
+                transform.Translate (new Vector3 (speed * Time.deltaTime, 0, 0));
                 // Set animation
                 animator.SetInteger("AnimState", 2);
 
@@ -57,12 +52,17 @@ public class Bandit : MonoBehaviour
                 // Turn player
                 transform.localScale = new Vector2(1.0f, 1.0f);
                 // Move player
-                transform.Translate (new Vector3 (-m_speed * Time.deltaTime, 0, 0));
+                transform.Translate (new Vector3 (-speed * Time.deltaTime, 0, 0));
                 // set animation
                 animator.SetInteger("AnimState", 2);
 
             }
 
+        }
+        else
+        {
+            //Not in range, stand idle
+            animator.SetInteger("AnimState", 0);
         }
        
 
@@ -70,6 +70,7 @@ public class Bandit : MonoBehaviour
 
     public void CheckIfCombat()
     {
+        // If in range of taget, attack
         if (Vector3.Distance (transform.position, targetPlayer.position) <= attackRange)
         {
             // If previous attck animation is not finished then return
@@ -80,7 +81,7 @@ public class Bandit : MonoBehaviour
 
             // Else: redo animation
             animator.SetTrigger("Attack");
-            Debug.Log(animator.GetCurrentAnimatorStateInfo(0).length);
+            isHit = true;
             
         }
     }
