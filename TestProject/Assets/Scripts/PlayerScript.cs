@@ -36,6 +36,7 @@ public class PlayerScript : MonoBehaviour
             transform.localScale = new Vector2(0.7f, 0.7f);
 
         MoveLeftAndRight();
+        Attack();
 
         // Measures Y axis velocity
         verticalMove = player.velocity.y;
@@ -103,9 +104,13 @@ public class PlayerScript : MonoBehaviour
 
     private void MoveLeftAndRight()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float moveBy = x * move_speed;
-        player.velocity = new Vector2(moveBy, player.velocity.y);
+        if (animator.GetBool("IdleBlock") == false)
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+            float moveBy = x * move_speed;
+            player.velocity = new Vector2(moveBy, player.velocity.y);
+        }
+        
     }
 
     private void JumpPressed()
@@ -116,6 +121,30 @@ public class PlayerScript : MonoBehaviour
         isGrounded = false;
         jumpStart = Time.time;
         
+    }
+
+    private void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            animator.SetTrigger("Attack1");
+        }
+        if(Input.GetKeyUp(KeyCode.X))
+        {
+            animator.ResetTrigger("Attack1");
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            animator.SetTrigger("Block");
+            animator.SetBool("IdleBlock", true);
+        }
+        if (Input.GetKeyUp(KeyCode.B))
+        {
+            animator.ResetTrigger("Block");
+            animator.SetBool("IdleBlock", false);
+        }
+
     }
 
 
