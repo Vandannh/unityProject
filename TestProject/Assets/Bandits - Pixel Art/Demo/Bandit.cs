@@ -9,15 +9,13 @@ public class Bandit : MonoBehaviour
     [SerializeField] float attackRange = 2f;
     [SerializeField] float engageRange = 5f;
     
-    private float coolDown = 2f;
+    private Animator animator;
+    private float coolDown = 1.5f;
     private float nextAttack = 0f;
     private float life = 60f;
-    
-
-    private Animator animator;
-
-    // Use this later for checking if it is a hit on target
-    private bool isHit = false;
+    private bool isInRange = false;
+    private bool isDead = false;
+    private bool isHittin = false;
     
 
     // Use this for initialization
@@ -29,13 +27,17 @@ public class Bandit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isHit = false;
+        if (isDead)
+        {
+            return;
+        }
+        isHittin = false;
         MoveToTarget();
         CheckIfCombat();
         CheckLife();
     }
 
-    public void MoveToTarget()
+    private void MoveToTarget()
     {
 
         if (Vector3.Distance (transform.position, targetPlayer.position) > attackRange && Vector3.Distance(transform.position, targetPlayer.position) < engageRange)
@@ -74,11 +76,13 @@ public class Bandit : MonoBehaviour
 
     }
 
-    public void CheckIfCombat()
+    private void CheckIfCombat()
     {
+        
         // If in range of taget, attack
         if (Vector3.Distance (transform.position, targetPlayer.position) <= attackRange)
         {
+            isInRange = true;
             // If previous attck animation is not finished then return
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
@@ -90,35 +94,39 @@ public class Bandit : MonoBehaviour
             {
                 nextAttack = Time.time + coolDown;
                 animator.SetTrigger("Attack");
-                isHit = true;
+                isHittin = true;
                 
-                coolDown = (float)Random.Range(1f, 4f) + (float)(Random.Range(0f,10f) /10f) ;
+                coolDown = (float)Random.Range(1f, 3f) + (float)(Random.Range(0f,10f) /10f) ;
             }
-           
-            
         }
+        else
+        {
+            isInRange = false;
+        }
+        
     }
 
-    public void CheckLife()
+    private void CheckLife()
     {
-        if (targetPlayer.GetComponent<PlayerScript>().isAttacking())
+        if (targetPlayer.GetComponent<PlayerScript>().isAttacking() && isInRange)
         {
-            if(Vector3.Distance(transform.position, targetPlayer.position) <= attackRange)
-            {
-                life -= 20f;
-                Debug.Log("HIT ON bandit");
-            }
+            //BANDIT HIT
+            //animator.SetTrigger("Hurt");
+            life -= 20f;
+
         }
         if (life <= 0f)
         {
-            Debug.Log("BANDIT DEAD");
+            //BANDIT DEAD
+            animator.SetTrigger("Death");
+            isDead = true;
         }
 
     }
 
     public bool isAttacking()
     {
-        return isHit;
+        return isHittin;
     }
 }
 

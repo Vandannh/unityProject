@@ -8,17 +8,20 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float move_speed = 5;
     [SerializeField] float jumpForce = 5;
     [SerializeField] float jumpColdown = 0.5f;
-    private float jumpStart = 0;
-    private bool isGrounded = true;
-    private float currentPlayerPos;
     [SerializeField] float horizontalMove = 0f;
     [SerializeField] float verticalMove = 0f;
+    [SerializeField] GameObject enemy;
+
     public Animator animator;
+    private bool isGrounded = true;
+    private bool isDead = false;
+    private bool isHitting = false;
+
+    private float currentPlayerPos;
+    private float jumpStart = 0;
     private float attackCoolDown = 0.7f;
     private float nextAttack = 0f;
-    [SerializeField] GameObject enemy;
     private float life = 100f;
-
 
     private Rigidbody2D player;
 
@@ -31,8 +34,11 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        if (isDead)
+        {
+            return;
+        }
+        isHitting = false;
         // Turn character?
         if (Input.GetAxisRaw("Horizontal") < 0)
             transform.localScale = new Vector2(-0.7f, 0.7f);
@@ -137,6 +143,7 @@ public class PlayerScript : MonoBehaviour
             {
                 nextAttack = Time.time + attackCoolDown;
                 animator.SetTrigger("Attack1");
+                isHitting = true;
             }
             
 
@@ -163,22 +170,26 @@ public class PlayerScript : MonoBehaviour
     {
         if (enemy.GetComponent<Bandit>().isAttacking())
         {
-            if (!animator.GetBool("IdleBlock") || !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1")) // TODO: fix parry
+            if (!animator.GetBool("IdleBlock")) // TODO: fix parry || !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1")
             {
                 life -= 20f;
-                Debug.Log("HIT");
+                //animator.SetTrigger("Hurt");
+                //Debug.Log("HIT");
             }
         }
 
+     
         if(life <= 0f)
         {
-            Debug.Log("DEAD");
+            animator.SetTrigger("Death");
+            isDead = true;
+            //Debug.Log("DEAD");
         }
     }
 
     public bool isAttacking()
     {
-        return animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1");
+        return isHitting;
     }
 
 
