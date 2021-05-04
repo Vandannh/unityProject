@@ -18,5 +18,9 @@ public class ScoreScript : MonoBehaviour {
         scoreText.text = "Gold Collected: " + score;
     }
 
+    public int getScore()
+    {
+        return score;
+    }
     
 }
