@@ -14,6 +14,10 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float horizontalMove = 0f;
     [SerializeField] float verticalMove = 0f;
     public Animator animator;
+    private float attackCoolDown = 0.7f;
+    private float nextAttack = 0f;
+    [SerializeField] GameObject enemy;
+    private float life = 100f;
 
 
     private Rigidbody2D player;
@@ -67,6 +71,8 @@ public class PlayerScript : MonoBehaviour
             AddGravity();
             animator.ResetTrigger("Jump");
         }
+
+        CheckLife();
     }
     
     private void OnCollisionExit2D(Collision2D collision)
@@ -127,7 +133,13 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            animator.SetTrigger("Attack1");
+            if(Time.time >= nextAttack)
+            {
+                nextAttack = Time.time + attackCoolDown;
+                animator.SetTrigger("Attack1");
+            }
+            
+
         }
         if(Input.GetKeyUp(KeyCode.X))
         {
@@ -145,6 +157,28 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("IdleBlock", false);
         }
 
+    }
+
+    private void CheckLife()
+    {
+        if (enemy.GetComponent<Bandit>().isAttacking())
+        {
+            if (!animator.GetBool("IdleBlock") || !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1")) // TODO: fix parry
+            {
+                life -= 20f;
+                Debug.Log("HIT");
+            }
+        }
+
+        if(life <= 0f)
+        {
+            Debug.Log("DEAD");
+        }
+    }
+
+    public bool isAttacking()
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1");
     }
 
 

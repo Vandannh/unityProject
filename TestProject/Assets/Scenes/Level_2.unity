@@ -291,10 +291,15 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7300426466503751703, guid: 3b7ade976cea83949a4d6009a1d5a322, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1431253163}
+    - target: {fileID: 7300426466503751703, guid: 3b7ade976cea83949a4d6009a1d5a322, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 2016358945}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7300426466503751701, guid: 3b7ade976cea83949a4d6009a1d5a322, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b7ade976cea83949a4d6009a1d5a322, type: 3}
 --- !u!1 &749023881
 GameObject:
@@ -1023,8 +1028,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014142364, y: 0.6765889}
-  m_Size: {x: 0.35935324, y: 1.1724732}
+  m_Offset: {x: -0.006022811, y: 0.6765889}
+  m_Size: {x: 0.25217366, y: 1.1724732}
   m_Direction: 0
 --- !u!1 &1938109847
 GameObject:
@@ -1200,3 +1205,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &2016358946
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016358944}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09723459, y: 0.6901142}
+  m_Size: {x: 0.4816532, y: 1.1875061}
+  m_Direction: 0

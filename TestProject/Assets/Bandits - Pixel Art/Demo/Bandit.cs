@@ -8,6 +8,11 @@ public class Bandit : MonoBehaviour
     [SerializeField] Transform targetPlayer;
     [SerializeField] float attackRange = 2f;
     [SerializeField] float engageRange = 5f;
+    
+    private float coolDown = 2f;
+    private float nextAttack = 0f;
+    private float life = 60f;
+    
 
     private Animator animator;
 
@@ -24,8 +29,10 @@ public class Bandit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isHit = false;
         MoveToTarget();
         CheckIfCombat();
+        CheckLife();
     }
 
     public void MoveToTarget()
@@ -33,8 +40,7 @@ public class Bandit : MonoBehaviour
 
         if (Vector3.Distance (transform.position, targetPlayer.position) > attackRange && Vector3.Distance(transform.position, targetPlayer.position) < engageRange)
         {
-            // Not in range to target
-            isHit = false;
+            
 
             if (targetPlayer.position.x >= transform.position.x + 1f)
             {
@@ -80,10 +86,39 @@ public class Bandit : MonoBehaviour
             }
 
             // Else: redo animation
-            animator.SetTrigger("Attack");
-            isHit = true;
+            if(Time.time >= nextAttack)
+            {
+                nextAttack = Time.time + coolDown;
+                animator.SetTrigger("Attack");
+                isHit = true;
+                
+                coolDown = (float)Random.Range(1f, 4f) + (float)(Random.Range(0f,10f) /10f) ;
+            }
+           
             
         }
+    }
+
+    public void CheckLife()
+    {
+        if (targetPlayer.GetComponent<PlayerScript>().isAttacking())
+        {
+            if(Vector3.Distance(transform.position, targetPlayer.position) <= attackRange)
+            {
+                life -= 20f;
+                Debug.Log("HIT ON bandit");
+            }
+        }
+        if (life <= 0f)
+        {
+            Debug.Log("BANDIT DEAD");
+        }
+
+    }
+
+    public bool isAttacking()
+    {
+        return isHit;
     }
 }
 
