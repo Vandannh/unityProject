@@ -11,7 +11,9 @@ public class PlayerScript : MonoBehaviour
     private float jumpStart = 0;
     private bool isGrounded = true;
     private float currentPlayerPos;
-
+    [SerializeField] float horizontalMove = 0f;
+    [SerializeField] float verticalMove = 0f;
+    public Animator animator;
 
 
     private Rigidbody2D player;
@@ -26,13 +28,28 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
+
+        // Turn character?
+        if (Input.GetAxisRaw("Horizontal") < 0)
+            transform.localScale = new Vector2(-0.7f, 0.7f);
+        else if (Input.GetAxisRaw("Horizontal") > 0)
+            transform.localScale = new Vector2(0.7f, 0.7f);
+
         MoveLeftAndRight();
-       
+
+        // Measures Y axis velocity
+        verticalMove = player.velocity.y;
+        animator.SetFloat("AirSpeedY", verticalMove);
+
+        // Measures Horizontal speed
+        horizontalMove = Input.GetAxisRaw("Horizontal") * move_speed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         // Control when jump is pressed down
         if (Input.GetButtonDown("Jump") && isGrounded && (Time.time > jumpStart + jumpColdown) )
         {
             JumpPressed();
+            animator.SetTrigger("Jump");
         }
 
         // Check if player as reached jump peak
@@ -47,15 +64,22 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonUp("Jump") )
         {
             AddGravity();
+            animator.ResetTrigger("Jump");
         }
     }
     
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        animator.SetBool("Grounded", false);
+    }
+
     //Checks if the player has landed on the ground or a platform
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Platform")
         {
             isGrounded = true;
+            animator.SetBool("Grounded", true);
         }
 
         // Check if collision with roof
@@ -91,6 +115,7 @@ public class PlayerScript : MonoBehaviour
         player.velocity = new Vector2(0, jumpForce);
         isGrounded = false;
         jumpStart = Time.time;
+        
     }
 
 
