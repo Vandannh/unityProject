@@ -71,7 +71,7 @@ public class PlayerScript : MonoBehaviour
     
     private void OnCollisionExit2D(Collision2D collision)
     {
-        animator.SetBool("Grounded", false);
+        //animator.SetBool("Grounded", false);
     }
 
     //Checks if the player has landed on the ground or a platform
