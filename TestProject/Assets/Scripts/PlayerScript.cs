@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float horizontalMove = 0f;
     [SerializeField] float verticalMove = 0f;
     [SerializeField] GameObject enemy;
+    [SerializeField] HealthBar healthBar;
 
     public Animator animator;
     private bool isGrounded = true;
@@ -21,7 +22,7 @@ public class PlayerScript : MonoBehaviour
     private float jumpStart = 0;
     private float attackCoolDown = 0.7f;
     private float nextAttack = 0f;
-    private float life = 100f;
+    private int life = 100;
 
     private Rigidbody2D player;
 
@@ -29,6 +30,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        healthBar.setMaxHealth(life);
     }
 
     // Update is called once per frame
@@ -172,7 +174,8 @@ public class PlayerScript : MonoBehaviour
         {
             if (!animator.GetBool("IdleBlock")) // TODO: fix parry || !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1")
             {
-                life -= 20f;
+                life -= 20;
+                healthBar.setHealth(life);
                 //animator.SetTrigger("Hurt");
                 //Debug.Log("HIT");
             }

@@ -8,20 +8,24 @@ public class Bandit : MonoBehaviour
     [SerializeField] Transform targetPlayer;
     [SerializeField] float attackRange = 2f;
     [SerializeField] float engageRange = 5f;
+    [SerializeField] HealthBar healthBar;
     
     private Animator animator;
     private float coolDown = 1.5f;
     private float nextAttack = 0f;
-    private float life = 60f;
+    private int life = 60;
     private bool isInRange = false;
     private bool isDead = false;
     private bool isHittin = false;
+    
     
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
+        healthBar.setMaxHealth(life);
+        healthBar.setHealth(life);
     }
 
     // Update is called once per frame
@@ -112,7 +116,8 @@ public class Bandit : MonoBehaviour
         {
             //BANDIT HIT
             //animator.SetTrigger("Hurt");
-            life -= 20f;
+            life -= 20;
+            healthBar.setHealth(life);
 
         }
         if (life <= 0f)
