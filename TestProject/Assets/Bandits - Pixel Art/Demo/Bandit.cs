@@ -116,8 +116,18 @@ public class Bandit : MonoBehaviour
         {
             //BANDIT HIT
             //animator.SetTrigger("Hurt");
-            life -= 20;
-            healthBar.setHealth(life);
+            if (targetPlayer.position.x < transform.position.x && targetPlayer.localScale.x > 0)
+            {
+                life -= 20;
+                healthBar.setHealth(life);
+
+            }
+            else if (targetPlayer.position.x > transform.position.x && targetPlayer.localScale.x < 0)
+            {
+                life -= 20;
+                healthBar.setHealth(life);
+            }
+
 
         }
         if (life <= 0f)
@@ -125,6 +135,8 @@ public class Bandit : MonoBehaviour
             //BANDIT DEAD
             animator.SetTrigger("Death");
             isDead = true;
+            gameObject.GetComponent<CapsuleCollider2D>().isTrigger = true;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
 
     }
