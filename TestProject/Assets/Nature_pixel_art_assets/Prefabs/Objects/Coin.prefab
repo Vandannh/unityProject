@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9045574423655326933}
   - component: {fileID: 9045574423655326932}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9045574423655326929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b46e78d5172c942429a26ffdbd80e522, type: 3}
   m_Name: 
