@@ -51,9 +51,9 @@ public class PlayerScript : MonoBehaviour
         isHitting = false;
         // Turn character?
         if (Input.GetAxisRaw("Horizontal") < 0)
-            transform.localScale = new Vector2(-0.7f, 0.7f);
+            transform.localScale = new Vector2(-1f, 1f);
         else if (Input.GetAxisRaw("Horizontal") > 0)
-            transform.localScale = new Vector2(0.7f, 0.7f);
+            transform.localScale = new Vector2(1f, 1f);
 
         MoveLeftAndRight();
         Attack();
