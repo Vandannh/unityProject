@@ -111,12 +111,22 @@ public class PlayerScript : MonoBehaviour
             AddGravity();
         }
 
+
+
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
         // Check Collision with spikes
-        if(collision.gameObject.name == "Spikes")
+        if (collision.gameObject.name == "Spikes")
         {
-            //Do something to the player. 
+            life -= 1;
+            healthBar.setHealth(life);
         }
     }
+    
+    
+
+    
 
 
     private void AddGravity()
