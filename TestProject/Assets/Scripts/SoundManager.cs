@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip jump, swing, nextLevel, coin;
+    public static AudioClip jump, dead, nextLevel, coin, hit;
     static AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -13,8 +13,12 @@ public class SoundManager : MonoBehaviour
     {
         coin = Resources.Load<AudioClip>("coin");
         jump = Resources.Load<AudioClip>("jump");
-        swing = Resources.Load<AudioClip>("swing");
         nextLevel = Resources.Load<AudioClip>("nextLevel");
+        hit = Resources.Load<AudioClip>("hit");
+        dead = Resources.Load<AudioClip>("dead");
+
+
+
 
         audioSource = GetComponent<AudioSource>();
 
@@ -34,7 +38,8 @@ public class SoundManager : MonoBehaviour
                 audioSource.PlayOneShot(jump);
                 break;
             case "swing":
-                audioSource.PlayOneShot(swing);
+                audioSource.PlayOneShot(hit);
+                
                 break;
             case "nextLevel":
                 audioSource.PlayOneShot(nextLevel);
@@ -42,6 +47,10 @@ public class SoundManager : MonoBehaviour
             case "coin":
                 audioSource.PlayOneShot(coin);
                 break;
+            case "dead":
+                audioSource.PlayOneShot(dead);
+                break;
+
         }
     }
 }

@@ -133,6 +133,7 @@ public class Bandit : MonoBehaviour
         if (life <= 0f)
         {
             //BANDIT DEAD
+            SoundManager.PlaySound("dead");
             animator.SetTrigger("Death");
             isDead = true;
             gameObject.GetComponent<CapsuleCollider2D>().isTrigger = true;

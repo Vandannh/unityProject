@@ -196,6 +196,7 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetTrigger("Death");
             isDead = true;
+            SoundManager.PlaySound("dead");
             //Debug.Log("DEAD");
         }
     }
