@@ -137,6 +137,7 @@ public class PlayerScript : MonoBehaviour
 
     private void JumpPressed()
     {
+        SoundManager.PlaySound("jump");
         currentPlayerPos = transform.position.y;
         player.gravityScale = 1;
         player.velocity = new Vector2(0, jumpForce);
@@ -151,6 +152,7 @@ public class PlayerScript : MonoBehaviour
         {
             if(Time.time >= nextAttack)
             {
+                SoundManager.PlaySound("swing");
                 nextAttack = Time.time + attackCoolDown;
                 animator.SetTrigger("Attack1");
                 isHitting = true;

@@ -96,10 +96,10 @@ public class Bandit : MonoBehaviour
             // Else: redo animation
             if(Time.time >= nextAttack)
             {
+                SoundManager.PlaySound("swing");
                 nextAttack = Time.time + coolDown;
                 animator.SetTrigger("Attack");
                 isHittin = true;
-                
                 coolDown = (float)Random.Range(1f, 3f) + (float)(Random.Range(0f,10f) /10f) ;
             }
         }

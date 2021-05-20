@@ -23,6 +23,7 @@ public class ChangeLevelScript : MonoBehaviour
             ScoreScript scoreScript = player.GetComponent<ScoreScript>();
             if (scoreScript.getScore() >= coinsToCollect)
             {
+                SoundManager.PlaySound("nextLevel");
                 SceneManager.LoadScene(sceneName: "Level_2");
             } else 
             {

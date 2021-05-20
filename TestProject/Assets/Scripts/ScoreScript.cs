@@ -14,6 +14,7 @@ public class ScoreScript : MonoBehaviour {
     }
     public void coinCollected()
     {
+        SoundManager.PlaySound("coin");
         score++;
         scoreText.text = "Gold Collected: " + score;
     }
