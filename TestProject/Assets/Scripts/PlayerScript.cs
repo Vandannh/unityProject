@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,8 +12,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float verticalMove = 0f;
     [SerializeField] GameObject enemy;
     [SerializeField] HealthBar healthBar;
-    [SerializeField] Button retryBtn;
-    [SerializeField] string currentScene;
 
     public Animator animator;
     private bool isGrounded = true;
@@ -35,9 +31,6 @@ public class PlayerScript : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         healthBar.setMaxHealth(life);
-        retryBtn.onClick.AddListener(ReloadScene);
-        retryBtn.gameObject.SetActive(false);
-
     }
 
     // Update is called once per frame
@@ -45,7 +38,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (isDead)
         {
-            retryBtn.gameObject.SetActive(true);
+            RetryMenuScript.Show();
             return;
         }
         isHitting = false;
@@ -215,11 +208,4 @@ public class PlayerScript : MonoBehaviour
     {
         return isHitting;
     }
-
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(sceneName: currentScene);
-    }
-
-
 }
