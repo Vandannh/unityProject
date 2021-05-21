@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip jump, dead, nextLevel, coin, hit;
+    public static AudioClip jump, dead, nextLevel, coin, hit, lost;
     static AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -16,6 +16,8 @@ public class SoundManager : MonoBehaviour
         nextLevel = Resources.Load<AudioClip>("nextLevel");
         hit = Resources.Load<AudioClip>("hit");
         dead = Resources.Load<AudioClip>("dead");
+        lost = Resources.Load<AudioClip>("lost");
+
 
 
 
@@ -49,6 +51,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "dead":
                 audioSource.PlayOneShot(dead);
+                break;
+            case "lost":
+                audioSource.PlayOneShot(lost);
                 break;
 
         }

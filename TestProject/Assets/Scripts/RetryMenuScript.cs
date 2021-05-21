@@ -35,6 +35,8 @@ public class RetryMenuScript : MonoBehaviour
     }
 
     public static void Show() {
+        SoundManager.PlaySound("lost");
+        Time.timeScale = 0;
         retryBtn.gameObject.SetActive(true);
         background.enabled = true;
     }

@@ -31,6 +31,8 @@ public class PlayerScript : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         healthBar.setMaxHealth(life);
+        Time.timeScale = 1f;
+
     }
 
     // Update is called once per frame
