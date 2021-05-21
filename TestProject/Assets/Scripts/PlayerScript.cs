@@ -104,6 +104,12 @@ public class PlayerScript : MonoBehaviour
             AddGravity();
         }
 
+        if (collision.gameObject.name == "InvertedSpikes")
+        {
+            life -= 20;
+            healthBar.setHealth(life);
+        }
+
 
 
     }
