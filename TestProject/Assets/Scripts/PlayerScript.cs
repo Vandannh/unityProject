@@ -5,26 +5,27 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] float horizontalMove = 0f;
+    [SerializeField] float jumpColdown = 0.5f;
+    [SerializeField] float verticalMove = 0f;
     [SerializeField] float move_speed = 5;
     [SerializeField] float jumpForce = 5;
-    [SerializeField] float jumpColdown = 0.5f;
-    [SerializeField] float horizontalMove = 0f;
-    [SerializeField] float verticalMove = 0f;
-    [SerializeField] GameObject enemy;
     [SerializeField] HealthBar healthBar;
+    [SerializeField] GameObject enemy;
 
-    public Animator animator;
+    private bool isHitting = false;
     private bool isGrounded = true;
     private bool isDead = false;
-    private bool isHitting = false;
 
-    private float currentPlayerPos;
-    private float jumpStart = 0;
+    public Animator animator;
+    private Rigidbody2D player;
+
     private float attackCoolDown = 0.7f;
+    private float currentPlayerPos;
     private float nextAttack = 0f;
+    private float jumpStart = 0;
     private int life = 100;
 
-    private Rigidbody2D player;
 
     // Use this for initialization
     void Start()
@@ -32,7 +33,6 @@ public class PlayerScript : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         healthBar.setMaxHealth(life);
         Time.timeScale = 1f;
-
     }
 
     // Update is called once per frame
@@ -44,22 +44,15 @@ public class PlayerScript : MonoBehaviour
             return;
         }
         isHitting = false;
-        // Turn character?
-        if (Input.GetAxisRaw("Horizontal") < 0)
-            transform.localScale = new Vector2(-1f, 1f);
-        else if (Input.GetAxisRaw("Horizontal") > 0)
-            transform.localScale = new Vector2(1f, 1f);
+        
 
+        DoRunningAnimations();
         MoveLeftAndRight();
+        TurnCharacter();
+        CheckLife();
         Attack();
 
-        // Measures Y axis velocity
-        verticalMove = player.velocity.y;
-        animator.SetFloat("AirSpeedY", verticalMove);
-
-        // Measures Horizontal speed
-        horizontalMove = Input.GetAxisRaw("Horizontal") * move_speed;
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        
 
         // Control when jump is pressed down
         if (Input.GetButtonDown("Jump") && isGrounded && (Time.time > jumpStart + jumpColdown) )
@@ -72,7 +65,6 @@ public class PlayerScript : MonoBehaviour
         if (transform.position.y >= currentPlayerPos + 3)
         {
             player.gravityScale = 3f;
-            
         }
 
 
@@ -82,14 +74,9 @@ public class PlayerScript : MonoBehaviour
             AddGravity();
             animator.ResetTrigger("Jump");
         }
-
-        CheckLife();
     }
     
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //animator.SetBool("Grounded", false);
-    }
+
 
     //Checks if the player has landed on the ground or a platform
     private void OnCollisionEnter2D(Collision2D collision)
@@ -115,6 +102,7 @@ public class PlayerScript : MonoBehaviour
 
 
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         // Check Collision with spikes
@@ -125,11 +113,6 @@ public class PlayerScript : MonoBehaviour
         }
     }
     
-    
-
-    
-
-
     private void AddGravity()
     {
         player.gravityScale = 3f;
@@ -168,9 +151,8 @@ public class PlayerScript : MonoBehaviour
                 animator.SetTrigger("Attack1");
                 isHitting = true;
             }
-            
-
         }
+
         if(Input.GetKeyUp(KeyCode.X))
         {
             animator.ResetTrigger("Attack1");
@@ -215,5 +197,36 @@ public class PlayerScript : MonoBehaviour
     public bool isAttacking()
     {
         return isHitting;
+    }
+
+    private void DoRunningAnimations()
+    {
+        // Measures Y axis velocity
+        verticalMove = player.velocity.y;
+        // Measures Horizontal speed
+        horizontalMove = Input.GetAxisRaw("Horizontal") * move_speed;
+        if (isGrounded)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+            animator.SetFloat("AirSpeedY", 0);
+        }
+        else
+        {
+            animator.SetFloat("AirSpeedY", verticalMove);
+            animator.SetFloat("Speed", 0);
+        }
+    }
+
+    private void TurnCharacter()
+    {
+        // Turn character
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+        else if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            transform.localScale = new Vector2(1f, 1f);
+        }
     }
 }
