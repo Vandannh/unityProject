@@ -9,6 +9,7 @@ public class ChangeLevelScript : MonoBehaviour
 {
     [SerializeField] private int coinsToCollect;
     [SerializeField] private Text popUp;
+    [SerializeField] private string nextLevel;
 
     private void Start()
     {
