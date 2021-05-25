@@ -75,20 +75,31 @@ public class PlayerScript : MonoBehaviour
             animator.ResetTrigger("Jump");
         }
     }
-    
+
+  
 
 
     //Checks if the player has landed on the ground or a platform
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Platform")
+        
+        if (collision.gameObject.name == "Ground" )
         {
             isGrounded = true;
             animator.SetBool("Grounded", true);
         }
-
+        if  (collision.gameObject.name == "Platform")
+        {
+            AddGravity();
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+            {
+                return;
+            }
+            isGrounded = true;
+            animator.SetBool("Grounded", true);
+        }
         // Check if collision with roof
-        if(collision.gameObject.name == "Roof")
+        if ((collision.gameObject.name == "Roof"))
         {
             AddGravity();
         }
@@ -111,6 +122,7 @@ public class PlayerScript : MonoBehaviour
             life -= 1;
             healthBar.setHealth(life);
         }
+        
     }
     
     private void AddGravity()
