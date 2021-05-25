@@ -25,7 +25,7 @@ public class ChangeLevelScript : MonoBehaviour
             if (scoreScript.getScore() >= coinsToCollect)
             {
                 SoundManager.PlaySound("nextLevel");
-                SceneManager.LoadScene(sceneName: "Level_2");
+                SceneManager.LoadScene(sceneName: nextLevel);
             } else 
             {
                 popUp.enabled = true;
