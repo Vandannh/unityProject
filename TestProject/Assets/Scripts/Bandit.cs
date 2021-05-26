@@ -33,6 +33,7 @@ public class Bandit : MonoBehaviour
     {
         if (isDead)
         {
+            transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             return;
         }
         isHittin = false;
